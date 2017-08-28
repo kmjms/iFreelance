@@ -1,6 +1,6 @@
 # iFreelance
 
-## Descipción
+## Descripción
 
 El proyecto consiste en un aplicativo web al que se puedan registrar varias empresas prestadoras de servicios en el área de desarrollo de software, diseño y publicidad para tener un control de cada uno de sus Clientes y socios. El sistema aloja la información básica de cada empresa y cada empresa subirá información sobre lo anterior mencionado. adicionalmente tendrá la posibilidad de generar documentación para clientes tales como Cotizaciones, Cuentas de Cobro, Informes sobre avances de proyecto y  contratos, Para los socios se tendrá la posibilidad de generar documentación para certificaciones laborales e informes de nómina.
 Adicional a esto se contará con un subsistema destinado a los clientes, ellos podrán ingresar a la plataforma y ver proyectos contratados así como seguir el progreso de avance de los mismos, realizar preguntas y observaciones, ver estado de cuentas de cobro (Pagadas y pendientes), así como realizar cotizaciones para futuros proyectos. La empresa podrá realizar observaciones para sus clientes o socios según sea conveniente.
