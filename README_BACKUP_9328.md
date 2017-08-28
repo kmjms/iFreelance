@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,10 +23,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
+=======
 # iFreelance
 Proyecto Curso Ingeniera de Software II
 
 Desarrolladores
-- Jose Ivan Carpintero Nariño - joicarpinteronar@unal.edu.co - Desarrollador
-- Kevin Andrey Herrera Silva - kaherreras@unal.edu.co - Desarrollador
+-Jose Ivan Carpintero Nariño - joicarpinteronar@unal.edu.co - Desarrollador
+>>>>>>> bd5ea654244dbf0d0b7111253e56f1b803bb7186
