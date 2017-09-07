@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170907151356) do
     t.string "name"
     t.float "price"
     t.integer "duration"
+    t.string "description"
     t.boolean "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -76,7 +77,9 @@ ActiveRecord::Schema.define(version: 20170907151356) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "client_id"
     t.integer "entity_id"
+    t.index ["client_id"], name: "index_quotations_on_client_id"
     t.index ["entity_id"], name: "index_quotations_on_entity_id"
   end
 

@@ -6,7 +6,7 @@ class CreateJobs < ActiveRecord::Migration[5.1]
       t.float :price
       t.integer :duration
       t.boolean :state
-
+      t.string :description
       t.timestamps
     end
 

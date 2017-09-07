@@ -12,5 +12,8 @@ class CreateQuotations < ActiveRecord::Migration[5.1]
     add_reference :quotations, :entity, index: true
     add_foreign_key  :quotations, :entities
 
+    add_reference :quotations, :client, index: true
+    add_foreign_key  :quotations, :clients
+
   end
 end
