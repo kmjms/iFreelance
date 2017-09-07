@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907120205) do
+ActiveRecord::Schema.define(version: 20170907120553) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string "user"
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.float "totalPayments"
+    t.date "lastAccess"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "kind_entities", force: :cascade do |t|
     t.string "name"
