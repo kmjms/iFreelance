@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quotations
   resources :entities
   resources :clients
   resources :type_jobs
