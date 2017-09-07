@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907131501) do
+ActiveRecord::Schema.define(version: 20170907151356) do
 
   create_table "clients", force: :cascade do |t|
     t.string "user"
@@ -35,6 +35,31 @@ ActiveRecord::Schema.define(version: 20170907131501) do
     t.datetime "updated_at", null: false
     t.integer "kind_entity_id"
     t.index ["kind_entity_id"], name: "index_entities_on_kind_entity_id"
+  end
+
+  create_table "job_logs", force: :cascade do |t|
+    t.integer "state_code"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "job_id"
+    t.index ["job_id"], name: "index_job_logs_on_job_id"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer "billNumber"
+    t.string "name"
+    t.float "price"
+    t.integer "duration"
+    t.boolean "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "client_id"
+    t.integer "entity_id"
+    t.integer "type_job_id"
+    t.index ["client_id"], name: "index_jobs_on_client_id"
+    t.index ["entity_id"], name: "index_jobs_on_entity_id"
+    t.index ["type_job_id"], name: "index_jobs_on_type_job_id"
   end
 
   create_table "kind_entities", force: :cascade do |t|

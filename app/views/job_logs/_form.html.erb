@@ -1,0 +1,27 @@
+<%= form_with(model: job_log, local: true) do |form| %>
+  <% if job_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job_log.errors.count, "error") %> prohibited this job_log from being saved:</h2>
+
+      <ul>
+      <% job_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state_code %>
+    <%= form.number_field :state_code, id: :job_log_state_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message, id: :job_log_message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

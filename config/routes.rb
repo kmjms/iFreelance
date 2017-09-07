@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :job_logs
+  resources :jobs
   resources :quotations
   resources :entities
   resources :clients
