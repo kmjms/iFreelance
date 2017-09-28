@@ -1,5 +1,7 @@
 # iFreelance
 
+Se implemento el modelo de datos
+
 ## Descripción
 
 El proyecto consiste en un aplicativo web al que se puedan registrar varias empresas prestadoras de servicios en el área de desarrollo de software, diseño y publicidad para tener un control de cada uno de sus Clientes y socios. El sistema aloja la información básica de cada empresa y cada empresa subirá información sobre lo anterior mencionado. adicionalmente tendrá la posibilidad de generar documentación para clientes tales como Cotizaciones, Cuentas de Cobro, Informes sobre avances de proyecto y  contratos, Para los socios se tendrá la posibilidad de generar documentación para certificaciones laborales e informes de nómina.
