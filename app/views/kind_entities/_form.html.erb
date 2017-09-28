@@ -1,0 +1,27 @@
+<%= form_with(model: kind_entity, local: true) do |form| %>
+  <% if kind_entity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kind_entity.errors.count, "error") %> prohibited this kind_entity from being saved:</h2>
+
+      <ul>
+      <% kind_entity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :kind_entity_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :permits %>
+    <%= form.number_field :permits, id: :kind_entity_permits %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

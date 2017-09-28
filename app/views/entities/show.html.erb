@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @entity.user %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @entity.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @entity.password %>
+</p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @entity.identifier %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @entity.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @entity.address %>
+</p>
+
+<p>
+  <strong>Has one:</strong>
+  <%= @entity.has_one %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @entity.phone %>
+</p>
+
+<%= link_to 'Edit', edit_entity_path(@entity) %> |
+<%= link_to 'Back', entities_path %>
