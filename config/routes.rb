@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'static_pages#home'
   #devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  mount RailsAdmin::Engine => '/', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :job_logs
   resources :jobs
   resources :quotations
