@@ -1,13 +1,28 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> SPRINT_REVISION_2
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
+<<<<<<< HEAD
          :recoverable, :rememberable, :trackable,
          :omniauthable
   has_many :todos
 
   def self.new_with_session(params, session)
+=======
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+ enum kind: [:admin, :freelance]
+ enum status: [:active, :inactive]
+ has_many :clients
+ has_many :projects
+ #has_many :todos
+
+ def self.new_with_session(params, session)
+>>>>>>> SPRINT_REVISION_2
 	  super.tap do |user|
 	    if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
 	      user.email = data["email"] if user.email.blank?
@@ -23,4 +38,8 @@ class User < ApplicationRecord
 	    user.image = auth.info.image # assuming the user model has an image
 	  end
 	end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> SPRINT_REVISION_2
