@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928023906) do
+ActiveRecord::Schema.define(version: 20171003201536) do
 
   create_table "clients", force: :cascade do |t|
     t.string "user"
@@ -89,6 +89,12 @@ ActiveRecord::Schema.define(version: 20170928023906) do
     t.index ["entity_id"], name: "index_quotations_on_entity_id"
   end
 
+  create_table "rolls", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "type_jobs", force: :cascade do |t|
     t.string "name"
     t.integer "skilsRequired"
@@ -113,6 +119,7 @@ ActiveRecord::Schema.define(version: 20170928023906) do
     t.string "uid"
     t.string "name"
     t.text "image"
+    t.integer "roll"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
