@@ -61,3 +61,5 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bcrypt', '~> 3.1.11', platforms: :ruby
+
+gem 'rails_12factor', group: :production
