@@ -81,6 +81,8 @@ test:
 #
 production:
   <<: *default
-  database: iFreelance_production
-  username: iFreelance
-  password: <%= ENV['IFREELANCE_DATABASE_PASSWORD'] %>
+  database: d2uiqclc5fmidb
+  username: fseahljdqrwokc
+  port: 5432
+  password: "52bbbaad11c090cb545bdc2b577e29cea4b232ee7dfa410e3ec825fc25fc617c"
+host: "ec2-54-235-80-137.compute-1.amazonaws.com"
