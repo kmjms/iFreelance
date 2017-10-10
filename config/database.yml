@@ -81,8 +81,8 @@ test:
 #
 production:
   <<: *default
-  database: d2uiqclc5fmidb
-  username: fseahljdqrwokc
+  database: d5hh16es4qngfm
+  username: jtfphedevgsdjc
   port: 5432
-  password: "52bbbaad11c090cb545bdc2b577e29cea4b232ee7dfa410e3ec825fc25fc617c"
-host: "ec2-54-235-80-137.compute-1.amazonaws.com"
+  password: "cbf0bacc492deb075272de1a71e9324f527b9716d5fa1545691c66f9fef22eec"
+host: "ec2-184-72-223-199.compute-1.amazonaws.com"
