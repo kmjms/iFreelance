@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.3'
 # Use postgresql as the database for Active Record
     #gem 'pg', '~> 0.18'
     gem 'pg', '~> 0.18'
@@ -60,4 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'bcrypt', '~> 3.1.11'
+gem 'bcrypt', '~> 3.1.11', platforms: :ruby
