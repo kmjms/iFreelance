@@ -6,7 +6,11 @@ RailsAdmin.config do |config|
   config.authenticate_with do
     warden.authenticate! scope: :user
   end
-  config.current_user_method(&:current_user)
+
+  if current_user.type_user!='client'
+    config.current_user_method(&:current_user)
+  end
+  
 
   ## == Cancan ==
   #config.authorize_with :cancan

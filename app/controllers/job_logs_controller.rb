@@ -61,6 +61,15 @@ class JobLogsController < ApplicationController
     end
   end
 
+
+  # QUERIES DEL MODELO
+  def getByJobId
+      @job_log = JobLog.find_by(job_id: params[:job_id])
+      render json: @job_log
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job_log
