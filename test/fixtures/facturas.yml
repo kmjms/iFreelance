@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  fecha: 2017-10-12
+  descripcion: MyText
+  total: 1.5
+
+two:
+  id: 
+  fecha: 2017-10-12
+  descripcion: MyText
+  total: 1.5

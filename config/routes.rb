@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'static_pages#home'
   #devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
   resources :clients
   resources :type_jobs
   resources :kind_entities
+  resources :facturas
+  resources :project
 
   get 'send' => 'send#index'
   post 'send' => 'send#create'

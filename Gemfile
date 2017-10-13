@@ -27,6 +27,18 @@ gem 'rails_admin'
 
 gem 'cancancan', '~> 1.15.0'
 gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin_charts'
+gem 'googlecharts'
+#gem 'will_paginate'
+#gem 'rails_admin_dynamic_charts'
+#gem 'chartkick'
+
+# Gem para gerar os pdfs
+gem 'prawn-rails'
+# Gem para gerar os gráficos
+gem 'gruff'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -60,3 +72,4 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bcrypt', platforms: :ruby
+gem 'faker'
