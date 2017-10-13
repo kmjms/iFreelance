@@ -15,6 +15,12 @@ class QuotationRegistriesController < ApplicationController
   # GET /quotation_registries/1
   # GET /quotation_registries/1.json
   def show
+    @quotation_registries = QuotationRegistry.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template:'quotation_registries/pdf', pdf: 'pdf'}
+    end
   end
 
   # GET /quotation_registries/new

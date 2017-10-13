@@ -14,7 +14,7 @@ else
   # wkhtmltopdf_path = "#{Rails.root}/bin/wkhtmltopdf-amd64"
   # wkhtmltopdf_path = "#{Rails.root}/bin/wkhtmltopdf-i386"
   # OS X
-  wkhtmltopdf_path = "C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"            
+  wkhtmltopdf_path = 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
   # Windows
   # wkhtmltopdf_path = 'C:\Program Files/wkhtmltopdf/wkhtmltopdf.exe'
 end

@@ -35,5 +35,6 @@
   <%= @quotation_registry.validity %>
 </p>
 
-<%= link_to 'Edit', edit_quotation_registry_path(@quotation_registry) %> |
+<%= link_to 'Edit', edit_quotation_registry_path(@quotation_registry) %> 
 <%= link_to 'Back', quotation_registries_path %>
+<%= link_to 'PDF', quotation_registry_path(@quotation_registry, format: :pdf) %>
