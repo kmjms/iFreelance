@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>Nombre Cliente</th>
       <th>Fecha</th>
       <th>Descripcion</th>
       <th>Total</th>
@@ -17,6 +18,7 @@
     <% @facturas.each do |factura| %>
       <tr>
         <td><%= factura.id %></td>
+        <td><%= factura.name_client %></td>
         <td><%= factura.fecha %></td>
         <td><%= factura.descripcion %></td>
         <td><%= factura.total %></td>

@@ -19,8 +19,6 @@ class ClientsController < ApplicationController
   end
 
   # GET /clients/1/edit
-  def edit
-  end
 
   # POST /clients
   # POST /clients.json
@@ -62,6 +60,15 @@ class ClientsController < ApplicationController
     end
   end
 
+  # queries del modelo de clientes 
+
+ 
+
+
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_client
@@ -72,4 +79,7 @@ class ClientsController < ApplicationController
     def client_params
       params.require(:client).permit(:user, :name, :email, :password, :totalPayments, :lastAccess)
     end
+
+    
+
 end

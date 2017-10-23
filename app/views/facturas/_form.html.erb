@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :name_client %>
+    <%= form.text_field :name_client, id: :factura_name_client %>
+  </div>
+
+  <div class="field">
     <%= form.label :fecha %>
     <%= form.date_select :fecha, id: :factura_fecha %>
   </div>

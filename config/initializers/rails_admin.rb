@@ -22,6 +22,11 @@ config.navigation_static_label = "Useful Links"
   end
   config.current_user_method(&:current_user)
 
+  #if current_user.type_user!='client'
+    #config.current_user_method(&:current_user)
+  #end
+
+
   ## == Cancan ==
   #config.authorize_with :cancan
 
@@ -48,7 +53,8 @@ config.navigation_static_label = "Useful Links"
     delete
     show_in_app
     pdf do
-      only Client
+      #only Client
+      only Factura
     end
 
     ## With an audit adapter, you can add:

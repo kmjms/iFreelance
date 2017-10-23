@@ -35,22 +35,39 @@ module RailsAdmin
             Prawn::Document.new(PDF_OPTIONS) do |pdf|
               pdf.fill_color "666666"
               pdf.text "iFreelance", :size => 32, :style => :bold, :align => :center
+
               pdf.move_down 80
 
-              pdf.text "Datos Personales", :size => 14, :align => :justify, :inline_format => true, :style => :bold
+              pdf.text "Cuenta de Cobro", :size => 14, :align => :justify, :inline_format => true, :style => :bold
               pdf.move_down 14
 
-              if @object.name
-                pdf.text "Nombre: #{@object.name}", :size => 12, :align => :justify, :inline_format => true
+              if @object.id_factura
+                pdf.text "Numero Factura: #{@object.id_factura}", :size => 12, :align => :justify, :inline_format => true
                 pdf.move_down 8
               end
-              # Muda de font para Helvetica
+
+
+              if @object.fecha
+                pdf.text "Fecha: #{@object.fecha}", :size => 12, :align => :justify, :inline_format => true
+                pdf.move_down 8
+              end
+              if @object.descripcion
+                pdf.text "Descripcion: #{@object.descripcion}", :size => 12, :align => :justify, :inline_format => true
+                pdf.move_down 8
+              end
+              if @object.total
+                pdf.text "Total a Pagar: #{@object.total}", :size => 12, :align => :justify, :inline_format => true
+                pdf.move_down 8
+              end
+
+
+              # Modo de font para Helvetica
              pdf.font "Helvetica"
-             # Inclui um texto com um link clicável (usando a tag link) no bottom da folha do lado esquerdo e coloca uma cor especifica nessa parte (usando a tag color)
-             pdf.text "Link Para o Manul do Prawn<link href='http://prawnpdf.org/manual.pdf'> <color rgb='5ca3e6'>clicável</color></link>", :size => 10, :inline_format => true, :valign => :bottom, :align => :left
-             # Inclui em baixo da folha do lado direito a data e o némero da página usando a tag page
+
+             pdf.text "Realizado Por<link href='http//:ifreelance-app.herokuapp.com'> <color rgb='5ca3e6'>Jose Carpintero</color></link>", :size => 10, :inline_format => true, :valign => :bottom, :align => :left
+
              pdf.number_pages "Generado: #{(Time.now).strftime("%d/%m/%y as %H:%M")} - Página <page>", :start_count_at => 0, :page_filter => :all, :at => [pdf.bounds.right - 140, 7], :align => :right, :size => 8
-             # Gera no nosso PDF e coloca na pasta public com o nome agreement.pdf
+             # Genera  PDF
              pdf.render_file("public/#{ramdom_file_name}.pdf")
            end
 
