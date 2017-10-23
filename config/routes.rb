@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
-  resources :quotation_registries
+  #get 'static_pages/home'
+  #root 'static_pages#home'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :job_logs
-  resources :jobs
-  resources :quotations
-  resources :entities
+  resources :state_projects
+  resources :type_projects
+  resources :incomes
+  resources :freelances
+  resources :expenses
+  resources :projects
+  resources :detail_invoices
+  resources :invoices
   resources :clients
-  resources :type_jobs
-  resources :kind_entities
-
+  root 'static_pages#home'
+  get 'index' => 'static_pages#index'
   get 'send' => 'send#index'
   post 'send' => 'send#create'
-
+  #get 'clients#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'static_pages#home'
 end

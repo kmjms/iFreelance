@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @client.user %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @client.name %>
 </p>
@@ -16,18 +11,13 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @client.password %>
+  <strong>Phone:</strong>
+  <%= @client.phone %>
 </p>
 
 <p>
-  <strong>Totalpayments:</strong>
-  <%= @client.totalPayments %>
-</p>
-
-<p>
-  <strong>Lastaccess:</strong>
-  <%= @client.lastAccess %>
+  <strong>Total payment:</strong>
+  <%= @client.total_payment %>
 </p>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |

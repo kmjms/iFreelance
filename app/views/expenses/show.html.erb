@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @expense.quantity %>
+</p>
+
+<p>
+  <strong>Process:</strong>
+  <%= @expense.process %>
+</p>
+
+<p>
+  <strong>Date expenses:</strong>
+  <%= @expense.date_expenses %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @expense.category %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @expense.state %>
+</p>
+
+<p>
+  <strong>Vinculation:</strong>
+  <%= @expense.vinculation %>
+</p>
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>

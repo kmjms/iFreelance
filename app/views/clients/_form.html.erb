@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user %>
-    <%= form.text_field :user, id: :client_user %>
-  </div>
-
-  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :client_name %>
   </div>
@@ -27,18 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id: :client_password %>
+    <%= form.label :phone %>
+    <%= form.number_field :phone, id: :client_phone %>
   </div>
 
   <div class="field">
-    <%= form.label :totalPayments %>
-    <%= form.text_field :totalPayments, id: :client_totalPayments %>
-  </div>
-
-  <div class="field">
-    <%= form.label :lastAccess %>
-    <%= form.text_field :lastAccess, id: :client_lastAccess %>
+    <%= form.label :total_payment %>
+    <%= form.text_field :total_payment, id: :client_total_payment %>
   </div>
 
   <div class="actions">
