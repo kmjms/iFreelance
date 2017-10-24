@@ -1,4 +1,5 @@
 class FreelancesController < ApplicationController
+  layout "dashboard"
   before_action :set_freelance, only: [:show, :edit, :update, :destroy]
 
   # GET /freelances

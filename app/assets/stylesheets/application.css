@@ -16,3 +16,8 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
   @import "custom";
+  
+  
+  input{
+    color: #000!important;
+  }

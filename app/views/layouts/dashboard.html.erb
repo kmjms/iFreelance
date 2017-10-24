@@ -40,15 +40,37 @@
 </div>
 <% end %>
 
-
+<% if user_signed_in? %>
   <div id="wrapper">
-   
-  
+    <%= render "layouts/nav" %>
+    <!-- /. NAV TOP  -->
+    <%= render "layouts/sidebar" %>
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper" >
+      <div id="page-inner">
+        <div class="row">
+          <div class="col-md-12">
+            <h2> <%= yield :subtitulo %> </h2>
+          </div>
+        </div>
+        <!-- /. ROW  -->
+        <hr />
+        <div class="row">
+          <div class="col-md-12">
+            <%= yield %>
+          </div>
+        </div>
+        <!-- /. ROW CONTENIDO PRINCIPAL -->
+      </div>
+      <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+  </div>
 
-  
+  <% else %>
 
     <%= yield %>
-  
+  <% end %>
 
     <!-- jQuery -->
     <script src="/lib/jquery/jquery.min.js"></script>
@@ -65,3 +87,4 @@
 
 </body>
 </html>
+
