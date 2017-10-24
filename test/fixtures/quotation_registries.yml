@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idquotationregistry: 1
+  date: MyString
+  nameclient: MyString
+  business: MyString
+  product: MyString
+  value: 1
+  validity: 1
+
+two:
+  idquotationregistry: 1
+  date: MyString
+  nameclient: MyString
+  business: MyString
+  product: MyString
+  value: 1
+  validity: 1
