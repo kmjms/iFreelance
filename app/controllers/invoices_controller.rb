@@ -1,4 +1,5 @@
 class InvoicesController < ApplicationController
+  layout "dashboard"
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   # GET /invoices

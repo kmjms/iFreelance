@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  layout "dashboard"
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   # GET /clients

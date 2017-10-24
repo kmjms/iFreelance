@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  #get 'static_pages/home'
-  #root 'static_pages#home'
+  get 'admin/index'
+
+  root 'static_pages#home'
+  get 'admin' => 'admin#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :state_projects
   resources :type_projects
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   resources :detail_invoices
   resources :invoices
   resources :clients
-  root 'static_pages#home'
+  
   get 'index' => 'static_pages#index'
   get 'send' => 'send#index'
   post 'send' => 'send#create'

@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  layout "dashboard"
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
 
   # GET /expenses
