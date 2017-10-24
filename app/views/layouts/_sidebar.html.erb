@@ -5,9 +5,9 @@
         <%= image_tag ('logo.PNG'), :class => 'user-image img-responsive' %>
       </li>
       <li>
-        <%= link_to index_path, method: :get do%>
+        <a href="/admin">
           <i class="glyphicon glyphicon-home glyphicon3x"></i> Inicio
-        <% end %>
+        </a>
       </li>
       <li>
         <%= link_to clients_path do%>
@@ -27,6 +27,11 @@
       <li>
         <%= link_to expenses_path do%>
           <i class="glyphicon glyphicon-th glyphicon3x"></i> Gastos
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  do%>
+          <i class="glyphicon glyphicon-bullhorn glyphicon3x"></i> Cotizaciones
         <% end %>
       </li>
     </ul>
