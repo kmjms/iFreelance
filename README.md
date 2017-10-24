@@ -1,5 +1,20 @@
 # iFreelance
 
+#Lista de Caracteristicas desarrolladas en el Sprint-2
+
+- Se implemento el Login con la red social Facebook - Julian Garzon Jimenez
+- Se implemento el dashboard de administrador para cada una de las tablas de la base de datos
+  cada una realiza las respectivas operaciones CRUD  -  Jose Ivan Carpintero Nariño
+- Se implemento la pagina principal de la aplicacion(landing page) y la vista de admin - Sebastian Camilo Agreda
+- Se implemento el formulario de contacto, donde se implementa el mailer para que la informacion  llegue al correo - Kevin Andrey Herrera Silva
+
+#Posibles Caracteristicas para el sigueinte Sprint
+
+-  Se desea pulir los modulos realizados 
+-  Se desea implementar el acceso para clientes y freelances
+-  Se desea crear los modulos de ingresos, egresos y cotizaciones 
+
+
 ## Descripción
 
 El proyecto consiste en un aplicativo web al que se puedan registrar varias empresas prestadoras de servicios en el área de desarrollo de software, diseño y publicidad para tener un control de cada uno de sus Clientes y socios. El sistema aloja la información básica de cada empresa y cada empresa subirá información sobre lo anterior mencionado. adicionalmente tendrá la posibilidad de generar documentación para clientes tales como Cotizaciones, Cuentas de Cobro, Informes sobre avances de proyecto y  contratos, Para los socios se tendrá la posibilidad de generar documentación para certificaciones laborales e informes de nómina.

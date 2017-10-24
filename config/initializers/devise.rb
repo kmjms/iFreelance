@@ -6,13 +6,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'b8f1ea11f69d5c0f78809917d3ed88b3cebe27c54d2ad4f552871d9f3fb8b268425df718d2bce6e1ee9b7d00a832f9a6183c97bde4e20a4fc687da84c3390296'
+  # config.secret_key = '3e7564c4ceb335f0db5027c4a4bafa0fd2ba5ebf527d6b808553b7c510566516ce6c16221991757ba79760bb36392e0d0b037ce92c3045a76ca112bf27c6cc2b'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'desa.sionica@gmail.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '4660596206b7fc8da8e532b46547237c922c366586eee4503a6b1acf89311df8eaa614dfe405212b8f0440b0d1559efbc3a526a491e59816d2df0e5e688dd8be'
+  # config.pepper = '08abf9ecc623c539fd17924ca4d90abf26d1d61897d45a047a11ce60e6f3b8adee5d7401f4a834a12314e2dc3664ff1e31ab43bb0cddfe5e50f0f2bfdcd189be'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -251,7 +251,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-    config.omniauth :facebook, '806276182884784', '341099055aca7a80b8c9a4f884fa0d75', callback_url:'http://localhost:3000/users/auth/facebook/callback'
+config.omniauth :facebook, '1950865011867914', '2a57746b0b75ba81d2920db7dcb16bc1', callback_url:'http://localhost:3000/users/auth/facebook/callback'
+
+#config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

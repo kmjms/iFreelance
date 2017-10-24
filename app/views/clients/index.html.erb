@@ -1,37 +1,45 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Clientes
+<% end %>
 
-<h1>Clients</h1>
+<%= link_to new_client_path, class: "btn btn-success"  do%>
+  <i class="glyphicon glyphicon-plus"></i> Crear Cliente
+<% end %>
 
-<table>
+<br>
+<br>
+<table class="table table-striped">
   <thead>
-    <tr>
-      <th>User</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Totalpayments</th>
-      <th>Lastaccess</th>
-      <th colspan="3"></th>
-    </tr>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Telefono</th>
+    <th>Pago Total</th>
+    <th>Opciones</th>
   </thead>
-
   <tbody>
     <% @clients.each do |client| %>
       <tr>
-        <td><%= client.user %></td>
-        <td><%= client.name %></td>
-        <td><%= client.email %></td>
-        <td><%= client.password %></td>
-        <td><%= client.totalPayments %></td>
-        <td><%= client.lastAccess %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= client.name %> </td>
+        <td> <%= client.email %> </td>
+        <td> <%= client.phone %> </td>
+        <td> <%= client.total_payment %> </td>
+        <td>
+          <%= link_to edit_client_path(client), class: "btn btn-primary" do%>
+            <i class="glyphicon glyphicon-edit"></i> Editar
+          <% end %>
+        </td>
+        <td>
+          <%= link_to client_path(client), class: "btn btn-primary" do %>
+            <i class="glyphicon glyphicon-eye-open"></i> Detalles
+          <% end %>
+        </td>
+        <td>
+            <%= link_to client_path(client), class: "btn btn-danger", method: :delete,data: { confirm: 'Estas seguro de eliminar?' } do %>
+              <i class="glyphicon glyphicon-trash"></i> Borrar
+            <% end %>
+        </td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Client', new_client_path %>

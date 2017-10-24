@@ -1,2 +1,0 @@
-class KindEntity < ApplicationRecord
-end

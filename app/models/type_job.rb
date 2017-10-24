@@ -1,2 +1,0 @@
-class TypeJob < ApplicationRecord
-end

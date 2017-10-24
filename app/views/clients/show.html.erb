@@ -1,34 +1,28 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Cliente: <%= @client.name %>
+<% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @client.user %>
-</p>
+Fecha de Creado: <%= @client.created_at %>
+<hr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
+<table class="table table-bordered">
+  <thead>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Telefono</th>
+    <th>Pago Total</th>
+  </thead>
+  <tbody>
 
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
+      <tr>
+        <td> <%= @client.name %> </td>
+        <td> <%= @client.email %></td>
+        <td> <%= @client.phone %> </td>
+        <td> <%= @client.total_payment %> </td>
+      </tr>
 
-<p>
-  <strong>Password:</strong>
-  <%= @client.password %>
-</p>
+  </tbody>
 
-<p>
-  <strong>Totalpayments:</strong>
-  <%= @client.totalPayments %>
-</p>
+</table>
 
-<p>
-  <strong>Lastaccess:</strong>
-  <%= @client.lastAccess %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+</div>
