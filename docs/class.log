@@ -13,3 +13,12 @@ Integracion mailer de contacto - 3/10/2017
 Creacion Template para las cotizaciones - 12/10/2017
 Poblar la base de datos con Faker 12/10/2017
 
+--------------------------------------------------------------------
+
+Se realiza modificacion de la seccion administrador 
+nuevas vistas, nuevos controladores -- 24/10/2017
+ se cambia la gema Rails-Admin porque no es facil de manipularla
+
+se implemeta las cotizaciones para el cliente y se implementa una seccion para clientes -- 24/10/2017
+se generan pdf para las cotizaciones
+
