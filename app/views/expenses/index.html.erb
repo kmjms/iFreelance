@@ -1,37 +1,49 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Gastos
+<% end %>
 
-<h1>Expenses</h1>
+<%= link_to new_expense_path, class: "btn btn-success"  do%>
+  <i class="glyphicon glyphicon-plus"></i> Crear Gasto
+<% end %>
 
-<table>
+<br>
+<br>
+<table class="table table-striped">
   <thead>
-    <tr>
-      <th>Quantity</th>
-      <th>Process</th>
-      <th>Date expenses</th>
-      <th>Category</th>
-      <th>State</th>
-      <th>Vinculation</th>
-      <th colspan="3"></th>
-    </tr>
+    <th>Cantidad</th>
+    <th>Proceso</th>
+    <th>Fecha</th>
+    <th>Categoria</th>
+    <th>Estado</th>
+    <th>Vinculacion</th>
+    <th>Opciones</th>
   </thead>
-
   <tbody>
     <% @expenses.each do |expense| %>
       <tr>
-        <td><%= expense.quantity %></td>
-        <td><%= expense.process %></td>
-        <td><%= expense.date_expenses %></td>
-        <td><%= expense.category %></td>
-        <td><%= expense.state %></td>
-        <td><%= expense.vinculation %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= expense.quantity %> </td>
+        <td> <%= expense.process %> </td>
+        <td> <%= expense.date_expenses %> </td>
+        <td> <%= expense.category %> </td>
+        <td> <%= expense.state %> </td>
+        <td> <%= expense.vinculation %> </td>
+        <td>
+          <%= link_to edit_expense_path(expense), class: "btn btn-primary" do%>
+            <i class="glyphicon glyphicon-edit"></i> Editar
+          <% end %>
+        </td>
+        <td>
+          <%= link_to expense_path(expense), class: "btn btn-primary" do %>
+            <i class="glyphicon glyphicon-eye-open"></i> Detalle
+          <% end %>
+        </td>
+        <td>
+            <%= link_to expense_path(expense), class: "btn btn-danger", method: :delete,data: { confirm: 'Estas seguro de eliminar?' } do %>
+              <i class="glyphicon glyphicon-trash"></i> Borrar
+            <% end %>
+        </td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Expense', new_expense_path %>

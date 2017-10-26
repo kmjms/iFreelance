@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Factura: <%= @invoice.number %>
+<% end %>
 
-<p>
-  <strong>Number:</strong>
-  <%= @invoice.number %>
-</p>
+Fecha de Creado: <%= @invoice.created_at %>
+<hr>
 
-<p>
-  <strong>Date invoice:</strong>
-  <%= @invoice.date_invoice %>
-</p>
+<table class="table table-bordered">
+  <thead>
+    <th>Numero</th>
+    <th>Fecha Creada</th>
+    <th>Fecha Limite</th>
+    <th>Nombre Cliente</th>
+    <th>Valor Total</th>
+    <th>Estado</th>
+  </thead>
+  <tbody>
 
-<p>
-  <strong>End date:</strong>
-  <%= @invoice.end_date %>
-</p>
+      <tr>
+        <td> <%= @invoice.number %> </td>
+        <td> <%= @invoice.date_invoice %></td>
+        <td> <%= @invoice.end_date %> </td>
+        <td> <%= @invoice.name_client %> </td>
+        <td> <%= @invoice.total_value %> </td>
+        <td> <%= @invoice.state %> </td>
+      </tr>
 
-<p>
-  <strong>Name client:</strong>
-  <%= @invoice.name_client %>
-</p>
+  </tbody>
 
-<p>
-  <strong>Total value:</strong>
-  <%= @invoice.total_value %>
-</p>
+</table>
 
-<p>
-  <strong>State:</strong>
-  <%= @invoice.state %>
-</p>
-
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
+</div>

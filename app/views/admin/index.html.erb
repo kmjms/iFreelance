@@ -1,10 +1,6 @@
-<section>
-    <div class="container text-center">
-        <h1>Bienvenido a iFreelance</h1>
-    </div>
-    
-</section>
-
+<% content_for :subtitulo do %>
+  Página de Inicio <small>- Resumen del IFreelance</small>
+<% end %>
 
 <div class="col-lg-3 col-md-6">
   <div class="panel panel-green">
@@ -96,4 +92,8 @@
       </div>
     </a>
   </div>
+</div>
+
+<div class="row">
+  <%= render partial: "row_charts"%>
 </div>

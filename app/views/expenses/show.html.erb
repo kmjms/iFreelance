@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Gasto: <%= @expense.process %>
+<% end %>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @expense.quantity %>
-</p>
+Fecha de Creado: <%= @expense.created_at %>
+<hr>
 
-<p>
-  <strong>Process:</strong>
-  <%= @expense.process %>
-</p>
+<table class="table table-bordered">
+  <thead>
+    <th>Cantidad</th>
+    <th>Proceso</th>
+    <th>Fecha</th>
+    <th>Categoria</th>
+    <th>Estado</th>
+    <th>Vinculacion</th>
+  </thead>
+  <tbody>
 
-<p>
-  <strong>Date expenses:</strong>
-  <%= @expense.date_expenses %>
-</p>
+      <tr>
+        <td> <%= @expense.quantity %> </td>
+        <td> <%= @expense.process %></td>
+        <td> <%= @expense.date_expenses %> </td>
+        <td> <%= @expense.category %> </td>
+        <td> <%= @expense.state %> </td>
+        <td> <%= @expense.vinculation %> </td>
+      </tr>
 
-<p>
-  <strong>Category:</strong>
-  <%= @expense.category %>
-</p>
+  </tbody>
 
-<p>
-  <strong>State:</strong>
-  <%= @expense.state %>
-</p>
+</table>
 
-<p>
-  <strong>Vinculation:</strong>
-  <%= @expense.vinculation %>
-</p>
-
-<%= link_to 'Edit', edit_expense_path(@expense) %> |
-<%= link_to 'Back', expenses_path %>
+</div>
