@@ -1,4 +1,4 @@
 class TypeProject < ApplicationRecord
-  has_one :project
+  has_many :project
 
 end

@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @project = Project.find(params[:id])
   end
 
   # POST /projects
@@ -42,6 +43,7 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+    @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
@@ -56,6 +58,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
+    @project = Project.find(params[:id])
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
@@ -71,6 +74,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name_project, :description, :star_date, :end_date, :name_client, :state_project, :type_project, :price, :progress)
+      params.require(:project).permit(:name_project, :description, :star_date, :end_date, :name_client, :state_project, :price, :progress, :type_project_id)
     end
 end

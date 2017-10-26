@@ -7,7 +7,6 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.date :end_date
       t.string :name_client
       t.string :state_project
-      t.string :type_project
       t.float :price
       t.float :progress
 

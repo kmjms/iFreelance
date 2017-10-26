@@ -1,22 +1,25 @@
-<%= form_with(model: type_project, local: true) do |form| %>
-  <% if type_project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(type_project.errors.count, "error") %> prohibited this type_project from being saved:</h2>
-
-      <ul>
-      <% type_project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for(@type_project) do |f| %>
+<% if @type_project.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <h2><center>!Error al crear el tipo!</center></h2>
+    <ul>
+    <% @type_project.errors.each_with_index do |msg| %>
+      <li><%= msg[1] %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
   <div class="field">
-    <%= form.label :name_type %>
-    <%= form.text_field :name_type, id: :type_project_name_type %>
-  </div>
-
+    <%= f.label :name_type, class: "control-label" %><br>
+    <%= f.text_field :name_type, class: "form-control" %>
+  </div><br>
   <div class="actions">
-    <%= form.submit %>
+    <%= button_tag( :class => "btn btn-success") do %>
+      <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
+    <% end %>
+    <%= link_to type_projects_path, class:"btn btn-primary" do%>
+    <i class="glyphicon glyphicon-repeat"></i> Regresar
+    <% end %>
   </div>
 <% end %>

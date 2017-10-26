@@ -24,6 +24,7 @@
         <td> <%= client.phone %> </td>
         <td> <%= client.total_payment %> </td>
         <td>
+
           <%= link_to edit_client_path(client), class: "btn btn-primary" do%>
             <i class="glyphicon glyphicon-edit"></i> Editar
           <% end %>
@@ -40,6 +41,10 @@
         </td>
 
       </tr>
+
     <% end %>
+
   </tbody>
 </table>
+ 
+<%= will_paginate @clients %>

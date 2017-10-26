@@ -22,6 +22,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'highcharts-rails', '~> 4.1', '>= 4.1.9'
 gem 'prawn'
 gem 'prawn-table'
+gem 'faker'
+gem 'will_paginate', '~> 3.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

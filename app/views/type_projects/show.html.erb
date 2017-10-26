@@ -1,9 +1,24 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Tipo Proyecto: <%= @type_project.name_type %>
+<% end %>
 
-<p>
-  <strong>Name type:</strong>
-  <%= @type_project.name_type %>
-</p>
+Fecha de Creado: <%= @type_project.created_at %>
+<hr>
 
-<%= link_to 'Edit', edit_type_project_path(@type_project) %> |
-<%= link_to 'Back', type_projects_path %>
+<table class="table table-bordered">
+  <thead>
+    <th>Nombre</th>
+
+  </thead>
+  <tbody>
+
+      <tr>
+        <td> <%= @type_project.name_type %> </td>
+        
+      </tr>
+
+  </tbody>
+
+</table>
+
+</div>

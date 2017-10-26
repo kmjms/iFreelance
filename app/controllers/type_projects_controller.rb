@@ -42,6 +42,7 @@ class TypeProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @type_project.update(type_project_params)
+
         format.html { redirect_to @type_project, notice: 'Type project was successfully updated.' }
         format.json { render :show, status: :ok, location: @type_project }
       else
