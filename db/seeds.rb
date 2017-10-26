@@ -9,7 +9,7 @@
 
 # pruebasree
 Client.create(email:"client@test.com",password:"123456")
-Freelance.create(email:"ree@test.com",password:"123456")
+Freelance.create(email:"ree@test.com",password:"123456",username:"testGuy",name:"Jhon",surname:"Doe")
 
 Type.create(name:"Cotizacion",description:"tipo de prueba")
 Type.create(name:"Diseño",description:"tipo de prueba")
