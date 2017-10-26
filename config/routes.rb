@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :detail_invoices
   resources :invoices
   resources :clients
+  resources :quotation_registries
   
   get 'index' => 'static_pages#index'
   get 'send' => 'send#index'

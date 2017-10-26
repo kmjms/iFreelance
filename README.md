@@ -1,18 +1,20 @@
 # iFreelance
 
-#Lista de Caracteristicas desarrolladas en el Sprint-2
+#Lista de Caracteristicas desarrolladas en el Sprint-4
 
-- Se implemento el Login con la red social Facebook - Julian Garzon Jimenez
-- Se implemento el dashboard de administrador para cada una de las tablas de la base de datos
-  cada una realiza las respectivas operaciones CRUD  -  Jose Ivan Carpintero Nariño
-- Se implemento la pagina principal de la aplicacion(landing page) y la vista de admin - Sebastian Camilo Agreda
-- Se implemento el formulario de contacto, donde se implementa el mailer para que la informacion  llegue al correo - Kevin Andrey Herrera Silva
+
+- Se Cambio el modelo y se desarrollo una nueva base de datos - Julian Garzon Jimenez y Jose Ivan Carpintero
+- Se implemento un nuevo portal admin - Jose Ivan Carpintero
+- Se implementaron nuevas rutas para el inicio de sesion - Sebastian Agreda
+- Se diseño el modulo de cotizaciones en pdf - Kevin Andrey Herrera
+- Se implementaron  reportes estadisticos en el dasboard para ver conteo y estadisticas de proyectos, facturas e ingresos- Jose Ivan Carpintero
 
 #Posibles Caracteristicas para el sigueinte Sprint
 
 -  Se desea pulir los modulos realizados 
--  Se desea implementar el acceso para clientes y freelances
--  Se desea crear los modulos de ingresos, egresos y cotizaciones 
+-  Se desea implementar el acceso para clientes
+-  Se desea crear los vistas de estados de proyectos para el cliente
+- enviar facturas por correo electronico 
 
 
 ## Descripción

@@ -88,6 +88,18 @@ ActiveRecord::Schema.define(version: 20171026132100) do
     t.index ["type_project_id"], name: "index_projects_on_type_project_id"
   end
 
+  create_table "quotation_registries", force: :cascade do |t|
+    t.integer "idquotationregistry"
+    t.string "date"
+    t.string "nameclient"
+    t.string "business"
+    t.string "product"
+    t.integer "value"
+    t.integer "validity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "state_projects", force: :cascade do |t|
     t.string "name_state"
     t.text "description"
