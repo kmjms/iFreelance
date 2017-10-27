@@ -5,7 +5,7 @@ class FreelancesController < ApplicationController
   # GET /freelances
   # GET /freelances.json
   def index
-    @freelances = Freelance.all
+    @freelances = Freelance.paginate(page: params[:page], per_page:10)
   end
 
   # GET /freelances/1

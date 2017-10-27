@@ -14,3 +14,4 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+#inflect.irregular 'type_project', 'type_projects'

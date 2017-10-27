@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Ingreso: <%= @income.amount %>
+<% end %>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @income.amount %>
-</p>
+Fecha de Creado: <%= @income.created_at %>
+<hr>
 
-<p>
-  <strong>Clasification:</strong>
-  <%= @income.clasification %>
-</p>
+<table class="table table-bordered">
+  <thead>
+    <th>Cantidad</th>
+    <th>Clasificacion</th>
+    <th>Informacion</th>
+    <th>Nombre Cliente</th>
+    <th>Nombre Proyecto</th>
+    <th>Desarrollador</th>
+  </thead>
+  <tbody>
 
-<p>
-  <strong>Info:</strong>
-  <%= @income.info %>
-</p>
+      <tr>
+        <td> <%= @income.amount %> </td>
+        <td> <%= @income.clasification %></td>
+        <td> <%= @income.info %> </td>
+        <td> <%= @income.name_client %> </td>
+        <td> <%= @income.name_project %> </td>
+        <td> <%= @income.developer %> </td>
+      </tr>
 
-<p>
-  <strong>Name client:</strong>
-  <%= @income.name_client %>
-</p>
+  </tbody>
 
-<p>
-  <strong>Name project:</strong>
-  <%= @income.name_project %>
-</p>
+</table>
 
-<p>
-  <strong>Developer:</strong>
-  <%= @income.developer %>
-</p>
-
-<%= link_to 'Edit', edit_income_path(@income) %> |
-<%= link_to 'Back', incomes_path %>
+</div>

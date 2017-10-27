@@ -1,31 +1,47 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Freelances
+<% end %>
 
-<h1>Freelances</h1>
+<%= link_to new_freelance_path, class: "btn btn-success"  do%>
+  <i class="glyphicon glyphicon-plus"></i> Crear Freelance
+<% end %>
 
-<table>
+<br>
+<br>
+<table class="table table-striped">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Total amount</th>
-      <th colspan="3"></th>
-    </tr>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Cantidad Total</th>
+    <th>Opciones</th>
   </thead>
-
   <tbody>
     <% @freelances.each do |freelance| %>
       <tr>
-        <td><%= freelance.name %></td>
-        <td><%= freelance.email %></td>
-        <td><%= freelance.total_amount %></td>
-        <td><%= link_to 'Show', freelance %></td>
-        <td><%= link_to 'Edit', edit_freelance_path(freelance) %></td>
-        <td><%= link_to 'Destroy', freelance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= freelance.name %> </td>
+        <td> <%= freelance.email %> </td>
+        <td> <%= freelance.total_amount %> </td>
+        <td>
+
+          <%= link_to edit_freelance_path(freelance), class: "btn btn-primary" do%>
+            <i class="glyphicon glyphicon-edit"></i> Editar
+          <% end %>
+        </td>
+        <td>
+          <%= link_to freelance_path(freelance), class: "btn btn-primary" do %>
+            <i class="glyphicon glyphicon-eye-open"></i> Detalle
+          <% end %>
+        </td>
+        <td>
+            <%= link_to freelance_path(freelance), class: "btn btn-danger", method: :delete,data: { confirm: 'Estas seguro de eliminar?' } do %>
+              <i class="glyphicon glyphicon-trash"></i> Borrar
+            <% end %>
+        </td>
+
       </tr>
+
     <% end %>
+
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Freelance', new_freelance_path %>
+<%= will_paginate @freelances %>

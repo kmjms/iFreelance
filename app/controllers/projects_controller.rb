@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.paginate(page: params[:page], per_page:10)
   end
 
   # GET /projects/1
@@ -31,11 +31,13 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
+        redirect_to projects_path
+        #format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        #format.json { render :show, status: :created, location: @project }
       else
-        format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+        render 'new'
+        #format.html { render :new }
+        #format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
   end

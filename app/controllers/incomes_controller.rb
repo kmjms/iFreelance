@@ -5,7 +5,7 @@ class IncomesController < ApplicationController
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = Income.all
+    @incomes = Income.paginate(page: params[:page], per_page:10)
   end
 
   # GET /incomes/1
