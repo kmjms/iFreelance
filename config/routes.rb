@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'index' => 'static_pages#index'
   get 'send' => 'send#index'
   post 'send' => 'send#create'
+
+  get '*path' => redirect('/')
   #get 'clients#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

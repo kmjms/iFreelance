@@ -1,30 +1,38 @@
 class IncomesController < ApplicationController
   layout "dashboard"
   before_action :set_income, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = Income.all
+    @incomes = Income.joins("LEFT JOIN projects on incomes.project_id = projects.id")
   end
 
   # GET /incomes/1
   # GET /incomes/1.json
   def show
+    @project = Project.find(@income.id)
   end
 
   # GET /incomes/new
   def new
+    @project = Freelance.find(current_user.id).projects
     @income = Income.new
   end
 
   # GET /incomes/1/edit
   def edit
+    @project = Freelance.find(current_user.id).projects
   end
 
   # POST /incomes
   # POST /incomes.json
   def create
+    @project = Project.find(@income.id)
+
+
+
     @income = Income.new(income_params)
 
     respond_to do |format|
@@ -42,6 +50,9 @@ class IncomesController < ApplicationController
   # PATCH/PUT /incomes/1.json
   def update
     respond_to do |format|
+      
+      @project = Freelance.find(current_user.id)
+
       if @income.update(income_params)
         format.html { redirect_to @income, notice: 'Income was successfully updated.' }
         format.json { render :show, status: :ok, location: @income }
