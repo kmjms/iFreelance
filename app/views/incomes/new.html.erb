@@ -15,25 +15,18 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> 
 
-  <%= f.label :amount, class: "control-label" %>
-   <%= f.text_field :amount, class: "form-control" %>
+   <%= f.label :project_id, class: "control-label" %>
+  <%= f.collection_select(:project_id, @projects, :id, :name, prompt: "Seleccione un tipo") %>
 
-   <%= f.label :clasification, class: "control-label" %>
-   <%= f.text_field :clasification, class: "form-control" %>
 
-   <%= f.label :info, class: "control-label" %>
-   <%= f.text_field :info, class: "form-control" %>
+  <%= f.label :description, class: "control-label" %>
+   <%= f.text_field :description, class: "form-control" %>
 
-   <%= f.label :name_client, class: "control-label" %>
-   <%= f.text_field :name_client, class: "form-control" %>
+   <%= f.label :price, class: "control-label" %>
+   <%= f.number_field :price, class: "form-control" %>
 
-   <%= f.label :name_project, class: "control-label" %>
-   <%= f.text_field :name_project, class: "form-control" %>
-
-   <%= f.label :developer, class: "control-label" %>
-   <%= f.text_field :developer, class: "form-control" %>
     <br><br>
 
     <%= button_tag( :class => "btn btn-success") do %>

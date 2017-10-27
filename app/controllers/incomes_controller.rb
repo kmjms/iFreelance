@@ -6,18 +6,19 @@ class IncomesController < ApplicationController
   # GET /incomes
   # GET /incomes.json
   def index
+    @projects = Freelance.find(current_user.id).projects
     @incomes = Income.joins("LEFT JOIN projects on incomes.project_id = projects.id").paginate(page: params[:page], per_page:10)
   end
 
   # GET /incomes/1
   # GET /incomes/1.json
   def show
-    @project = Project.find(@income.id)
+    @project = Project.find(@income.project_id)
   end
 
   # GET /incomes/new
   def new
-    @project = Freelance.find(current_user.id).projects
+    @projects = Freelance.find(current_user.id).projects
     @income = Income.new
   end
 
@@ -29,7 +30,7 @@ class IncomesController < ApplicationController
   # POST /incomes
   # POST /incomes.json
   def create
-    @project = Project.find(@income.id)
+    @projects = Freelance.find(current_user.id).projects
 
 
 
@@ -81,6 +82,6 @@ class IncomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def income_params
-      params.require(:income).permit(:amount, :clasification, :info, :name_client, :name_project, :developer)
+      params.require(:income).permit(:price,:description, :project_id)
     end
 end
