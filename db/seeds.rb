@@ -49,4 +49,12 @@ end
     state_project_id:rand(1..5),
     type_project_id:rand(1..5)
   }])
-end 
+end
+
+50.times do
+  Income.create([{
+    price: Faker::Number.decimal(2, 3),
+    description: Faker::Simpsons.quote,
+    project_id:rand(1..20)
+    }])
+end
