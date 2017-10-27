@@ -1,14 +1,18 @@
 class CreateProjects < ActiveRecord::Migration[5.1]
   def change
     create_table :projects do |t|
-      t.string :name_project
+      t.string :name
       t.text :description
-      t.date :star_date
+      t.date :start_date
       t.date :end_date
-      t.string :name_client
-      t.string :state_project
-      t.float :price
       t.float :progress
+      t.float :price
+
+      t.references :client
+      t.references :freelance
+      t.references :type_project
+      t.references :state_project
+
 
       t.timestamps
     end
