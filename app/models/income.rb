@@ -1,7 +1,7 @@
 class Income < ApplicationRecord
   #belongs_to :freelance
   belongs_to :project
-  before_create :add_Price
+  before_create :add_price
   before_destroy :remove_price
 
   private
