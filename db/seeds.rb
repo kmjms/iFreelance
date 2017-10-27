@@ -5,24 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do
+  StateProject.create([{
+    name: Faker::Name.title,
+    description:Faker::Simpsons.quote
+    }])
+end
+
+10.times do
+  TypeProject.create([{
+    name:Faker::Job.field
+    }])
+end
+
+
 20.times do
   Client.create([{
     name: Faker::Name.name,
     email: Faker::Internet.free_email,
-    phone: Faker::Number.number(4),
-    total_payment: Faker::Number.decimal(2, 3),
+    phone: Faker::Number.number(4)
     }])
 end
 
+
+20.times do
+  Freelance.create([{
+    name: Faker::Name.name,
+    email: Faker::Internet.free_email
+    }])
+end
+
+##
 20.times do
   Project.create([{
-    name_project: Faker::Team.creature,
+    name: Faker::Team.creature,
     description: Faker::Lorem.sentence,
-    star_date: Faker::Date.between(2.days.ago, Date.today),
+    start_date: Faker::Date.between(2.days.ago, Date.today),
     end_date: Faker::Date.between(2.days.ago, Date.today),
-    name_client: Faker::Name.name,
-    state_project: Faker::Team.state,
-    price: Faker::Number.decimal(2, 3),
     progress: Faker::Number.decimal(2),
-   }])
-end
+    client_id:rand(1..20),
+    freelance_id:rand(1..20),
+    state_project_id:rand(1..5),
+    type_project_id:rand(1..5)
+  }])
+end 

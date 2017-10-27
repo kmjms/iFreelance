@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026132100) do
+ActiveRecord::Schema.define(version: 20171027032703) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(version: 20171026132100) do
     t.float "total_payment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "clients_freelances", id: false, force: :cascade do |t|
+    t.integer "client_id", null: false
+    t.integer "freelance_id", null: false
+    t.index ["client_id", "freelance_id"], name: "index_clients_freelances_on_client_id_and_freelance_id"
   end
 
   create_table "detail_invoices", force: :cascade do |t|
@@ -31,14 +37,12 @@ ActiveRecord::Schema.define(version: 20171026132100) do
   end
 
   create_table "expenses", force: :cascade do |t|
-    t.float "quantity"
-    t.string "process"
-    t.date "date_expenses"
-    t.string "category"
-    t.string "state"
-    t.boolean "vinculation"
+    t.float "price"
+    t.string "description"
+    t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_expenses_on_project_id"
   end
 
   create_table "freelances", force: :cascade do |t|
@@ -50,14 +54,12 @@ ActiveRecord::Schema.define(version: 20171026132100) do
   end
 
   create_table "incomes", force: :cascade do |t|
-    t.float "amount"
-    t.string "clasification"
-    t.string "info"
-    t.string "name_client"
-    t.string "name_project"
-    t.string "developer"
+    t.float "price"
+    t.string "description"
+    t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_incomes_on_project_id"
   end
 
   create_table "invoices", force: :cascade do |t|
@@ -69,22 +71,24 @@ ActiveRecord::Schema.define(version: 20171026132100) do
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "client_id"
-    t.index ["client_id"], name: "index_invoices_on_client_id"
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "name_project"
+    t.string "name"
     t.text "description"
-    t.date "star_date"
+    t.date "start_date"
     t.date "end_date"
-    t.string "name_client"
-    t.string "state_project"
-    t.float "price"
     t.float "progress"
+    t.float "price"
+    t.integer "client_id"
+    t.integer "freelance_id"
+    t.integer "type_project_id"
+    t.integer "state_project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "type_project_id"
+    t.index ["client_id"], name: "index_projects_on_client_id"
+    t.index ["freelance_id"], name: "index_projects_on_freelance_id"
+    t.index ["state_project_id"], name: "index_projects_on_state_project_id"
     t.index ["type_project_id"], name: "index_projects_on_type_project_id"
   end
 
@@ -101,14 +105,14 @@ ActiveRecord::Schema.define(version: 20171026132100) do
   end
 
   create_table "state_projects", force: :cascade do |t|
-    t.string "name_state"
+    t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "type_projects", force: :cascade do |t|
-    t.string "name_type"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
