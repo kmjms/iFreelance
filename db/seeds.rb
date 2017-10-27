@@ -19,7 +19,6 @@ end
     }])
 end
 
-
 20.times do
   Client.create([{
     name: Faker::Name.name,
@@ -35,6 +34,18 @@ end
     email: Faker::Internet.free_email
     }])
 end
+
+10.times do
+  currentFreelance = Freelance.find(rand(1..20))
+
+  rand(1..3).times do
+    
+    currentFreelance.clients << Client.find(rand(1..20))
+    currentFreelance.save
+  end
+end
+
+
 
 ##
 20.times do
