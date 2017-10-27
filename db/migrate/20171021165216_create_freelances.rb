@@ -4,6 +4,7 @@ class CreateFreelances < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :email
       t.float :total_amount
+      
 
       t.timestamps
     end
