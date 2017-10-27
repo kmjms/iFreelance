@@ -12,34 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount, id: :income_amount %>
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :income_price %>
   </div>
 
   <div class="field">
-    <%= form.label :clasification %>
-    <%= form.text_field :clasification, id: :income_clasification %>
+    <%= form.label :description %>
+    <%= form.text_field :decription, id: :income_description %>
   </div>
 
   <div class="field">
-    <%= form.label :info %>
-    <%= form.text_field :info, id: :income_info %>
+      <%= form.label :project_id, class: "control-label" %>
+      <%= form.collection_select(:project_id, @project, :id, :name, prompt: "Seleccione un tipo") %>
   </div>
 
-  <div class="field">
-    <%= form.label :name_client %>
-    <%= form.text_field :name_client, id: :income_name_client %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name_project %>
-    <%= form.text_field :name_project, id: :income_name_project %>
-  </div>
-
-  <div class="field">
-    <%= form.label :developer %>
-    <%= form.text_field :developer, id: :income_developer %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

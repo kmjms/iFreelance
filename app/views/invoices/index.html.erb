@@ -1,49 +1,46 @@
 <% content_for :subtitulo do %>
-  Facturas
-<% end %>
-
-<%= link_to new_invoice_path, class: "btn btn-success"  do%>
-  <i class="glyphicon glyphicon-plus"></i> Crear Factura
+  Proyectos Actuales
 <% end %>
 
 <br>
 <br>
 <table class="table table-striped">
   <thead>
-    <th>Numero</th>
-    <th>Fecha Creada</th>
-    <th>Fecha Limite</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Fecha Inicio</th>
+    <th>Fecha Fin</th>
     <th>Nombre Cliente</th>
-    <th>Valor Total</th>
     <th>Estado</th>
+    <th>Precio</th>
+    <th>Progreso</th>
+    <th>Opciones</th>
   </thead>
   <tbody>
-    <% @invoices.each do |invoice| %>
+    <% @projects.each do |project| %>
       <tr>
-        <td> <%= invoice.number %> </td>
-        <td> <%= invoice.date_invoice %> </td>
-        <td> <%= invoice.end_date %> </td>
-        <td> <%= invoice.name_client %> </td>
-        <td> <%= invoice.total_value %> </td>
-        <td> <%= invoice.state %> </td>
+        <td> <%= project.name %> </td>
+        <td> <%= project.description %> </td>
+        <td> <%= project.start_date %> </td>
+        <td> <%= project.end_date %> </td>
+        <td> <%= Client.find(project.client_id).name %> </td>
+        <td> <%= StateProject.find(project.state_project_id).name%></td>
+        <td> <%= number_to_currency(project.price) %></td>
+        <td> <%= project.progress %></td>
         <td>
-          <%= link_to edit_invoice_path(invoice), class: "btn btn-primary" do%>
-            <i class="glyphicon glyphicon-edit"></i> Editar
+          <% valuePath = projects_path + '/'+ project.id.to_s + ".pdf" %>
+          <%= link_to  valuePath,target:"_blank", class: "btn btn-warning" do%>
+            <i class="glyphicons glyphicons-new-window-alt"></i>PDF
           <% end %>
         </td>
         <td>
-          <%= link_to invoice_path(invoice), class: "btn btn-primary" do %>
-            <i class="glyphicon glyphicon-eye-open"></i> Detalle
+          <%= link_to project_path(project), class: "btn btn-primary" do %>
+            <i class="glyphicons glyphicons-send"></i> Enviar
           <% end %>
         </td>
-        <td>
-            <%= link_to invoice_path(invoice), class: "btn btn-danger", method: :delete,data: { confirm: 'Estas seguro de eliminar?' } do %>
-              <i class="glyphicon glyphicon-trash"></i> Borrar
-            <% end %>
-        </td>
-
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @invoices %>
+
+<%= will_paginate @projects %>

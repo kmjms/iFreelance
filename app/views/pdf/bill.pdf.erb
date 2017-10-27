@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDF</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<head>
+  		<meta charset="UTF-8">
+	</head>
+</head>
+<body>
+<!--<div class="row">
+	<div class="col-xs-11"></div>
+	<div class="col-xs-1"></div>
+</div>-->
+<div class="container">
+	<div class="col-sm-9 col-lg-10"></div>
+	<div class="col-sm-3 col-lg-1"><center>
+		<img class="img-responsive" src="assets/img/logo.jpg">
+		<h3>Factura No. <%= @project.id %></h3>
+	</center></div>
+	<div class="col-sm-1"></div>
+</div>
+
+<h3>Bogotá, <%= DateTime.now.to_date %></h3>
+<h3>Para,   <%= @client.name %>.</h3>
+<h3>Bogotá DC.</h3>
+<h3>En atención a su solicitud, nos permitimos generar la factura a los siguientes servicios:</h3>
+<div class="row">
+	
+<div class = "container">
+<table class="table">
+	<thead >
+		<tr>
+			<th class="col-sm-10">Producto</th>
+			<th  class="col-sm-2">Valor</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @project.incomes.each do |item| %>
+			<tr>
+				<td align="justify"> <p> <%= item.description %></p> </td>
+				<center><td><%= number_to_currency(item.price) %> </td></center>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+</div>
+
+<div class="container">
+	Total : <b><%= number_to_currency(@project.price)  %> </b>
+</div>
+
+<div class="container">
+	VIGENCIA DE LA COTIZACIÓN: Treinta (30) días
+</div>
+<div class="container">
+	En espera que mi trabajo haya sido de su total agrado.
+</div>
+<div class="container">
+	Cordialmente,
+</div>
+
+<footer class="align-text-bottom">
+	<center><%= @freelance.name  %></center>
+	<center>Teléfono: (+57) 312 123 45 68</center>
+	<center>E-Mail: <%= @freelance.email  %></center>
+</footer>
+</body>
+</html>

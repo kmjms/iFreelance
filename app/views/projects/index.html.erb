@@ -23,14 +23,14 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td> <%= project.name_project %> </td>
+        <td> <%= project.name %> </td>
         <td> <%= project.description %> </td>
-        <td> <%= project.star_date %> </td>
+        <td> <%= project.start_date %> </td>
         <td> <%= project.end_date %> </td>
-        <td> <%= project.name_client %> </td>
-        <td> <%= project.state_project %> </td>
-        <td> <%= project.price %> </td>
-        <td> <%= project.progress %> </td>
+        <td> <%= project.client_id or "Undefined" %>  </td>
+        <td> <%= StateProject.find(project.state_project_id).name%></td> 
+        <td> <%= number_to_currency(project.price) %></td>
+        <td> <%= project.progress %></td>
         <td>
           <%= link_to edit_project_path(project), class: "btn btn-primary" do%>
             <i class="glyphicon glyphicon-edit"></i> Editar

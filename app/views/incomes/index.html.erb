@@ -10,23 +10,19 @@
 <br>
 <table class="table table-striped">
   <thead>
-    <th>Cantidad</th>
-    <th>Clasificacion</th>
-    <th>Informacion</th>
-    <th>Nombre Cliente</th>
+    <th>Descripcion</th>
     <th>Nombre Proyecto</th>
-    <th>Desarrollador</th>
+    <th>Precio</th>
     <th>Opciones</th>
   </thead>
   <tbody>
     <% @incomes.each do |income| %>
       <tr>
-        <td> <%= income.amount %> </td>
-        <td> <%= income.clasification %> </td>
-        <td> <%= income.info %> </td>
-        <td> <%= income.name_client %> </td>
-        <td> <%= income.name_project %> </td>
-        <td> <%= income.developer %> </td>
+        
+        <td> <%= income.description %> </td>
+        
+        <td> <%= Project.find(income.project_id).name %> </td>
+        <td> <%= income.price %> </td>
         <td>
 
           <%= link_to edit_income_path(income), class: "btn btn-primary" do%>

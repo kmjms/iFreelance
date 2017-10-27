@@ -1,5 +1,5 @@
 <% content_for :subtitulo do %>
-  Proyecto: <%= @project.name_project %>
+  Proyecto: <%= @project.name %>
 <% end %>
 
 Fecha de Creado: <%= @project.created_at %>
@@ -19,12 +19,12 @@ Fecha de Creado: <%= @project.created_at %>
   <tbody>
 
       <tr>
-        <td> <%= @project.name_project %> </td>
+        <td> <%= @project.name %> </td>
         <td> <%= @project.description %></td>
-        <td> <%= @project.star_date %> </td>
+        <td> <%= @project.start_date %> </td>
         <td> <%= @project.end_date %> </td>
-        <td> <%= @project.name_client %> </td>
-        <td> <%= @project.state_project %> </td>
+        <td> <%= @client %></td>
+        <td> <%= @state_project %> </td>
         <td> <%= @project.price %> </td>
         <td> <%= @project.progress %> </td>
       </tr>

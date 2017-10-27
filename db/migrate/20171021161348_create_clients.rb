@@ -5,6 +5,7 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.string :email
       t.integer :phone
       t.float :total_payment
+  
 
       t.timestamps
     end

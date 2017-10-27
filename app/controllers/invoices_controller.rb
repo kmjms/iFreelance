@@ -1,11 +1,15 @@
 class InvoicesController < ApplicationController
   layout "dashboard"
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.paginate(page: params[:page], per_page:10)
+
+    myFreelance = Freelance.find(current_user.id)
+    @projects = myFreelance.projects.paginate(page: params[:page], per_page:10)
+
   end
 
   # GET /invoices/1
