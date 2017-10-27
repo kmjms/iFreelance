@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171027032703) do
     t.integer "client_id", null: false
     t.integer "freelance_id", null: false
     t.index ["client_id", "freelance_id"], name: "index_clients_freelances_on_client_id_and_freelance_id"
+    t.index ["freelance_id", "client_id"], name: "index_clients_freelances_on_freelance_id_and_client_id"
   end
 
   create_table "detail_invoices", force: :cascade do |t|
