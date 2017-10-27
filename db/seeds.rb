@@ -14,7 +14,7 @@
     }])
 end
 
-20.times do
+100.times do
   Project.create([{
     name_project: Faker::Team.creature,
     description: Faker::Lorem.sentence,
@@ -25,4 +25,45 @@ end
     price: Faker::Number.decimal(2, 3),
     progress: Faker::Number.decimal(2),
    }])
+end
+
+100.times do
+  Expense.create([{
+    quantity: Faker::Number.decimal(7, 3),
+    process: Faker::Lorem.words,
+    date_expenses: Faker::Date.between(8.days.ago, Date.today),
+    category: Faker::Ancient.titan,
+    state: Faker::Boolean.boolean,
+    vinculation: Faker::Boolean.boolean,
+    }])
+end
+
+100.times do
+  Freelance.create([{
+    name: Faker::Name.name,
+    email: Faker::Internet.free_email,
+    total_amount: Faker::Number.decimal(5, 3),
+    }])
+end
+
+100.times do
+  Income.create([{
+    amount: Faker::Number.decimal(7, 3),
+    clasification: Faker::Bank.name,
+    info: Faker::Company.name,
+    name_client: Faker::Name.name,
+    name_project: Faker::Team.creature,
+    developer: Faker::DragonBall.character,
+    }])
+end
+
+100.times do
+  Invoice.create([{
+    number: Faker::Number.between(1, 100),
+    date_invoice: Faker::Date.between(3.days.ago, Date.today),
+    end_date: Faker::Date.between(8.days.ago, Date.today),
+    name_client: Faker::Name.name,
+    total_value: Faker::Number.decimal(7, 3),
+    state: Faker::Ancient.titan,
+    }])
 end

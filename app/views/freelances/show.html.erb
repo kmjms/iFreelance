@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<% content_for :subtitulo do %>
+  Freelance: <%= @freelance.name %>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @freelance.name %>
-</p>
+Fecha de Creado: <%= @freelance.created_at %>
+<hr>
 
-<p>
-  <strong>Email:</strong>
-  <%= @freelance.email %>
-</p>
+<table class="table table-bordered">
+  <thead>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Cantidad Total</th>
+  </thead>
+  <tbody>
 
-<p>
-  <strong>Total amount:</strong>
-  <%= @freelance.total_amount %>
-</p>
+      <tr>
+        <td> <%= @freelance.name %> </td>
+        <td> <%= @freelance.email %></td>
+        <td> <%= @freelance.total_amount %> </td>
+      </tr>
 
-<%= link_to 'Edit', edit_freelance_path(@freelance) %> |
-<%= link_to 'Back', freelances_path %>
+  </tbody>
+
+</table>
+
+</div>

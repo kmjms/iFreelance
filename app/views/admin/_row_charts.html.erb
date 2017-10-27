@@ -1,5 +1,32 @@
 <div class="col-md-6">
   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><strong>Proyectos Recientes</strong></h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <th>Nombre Proyecto</th>
+          <th>Precio</th>
+        </thead>
+        <tbody>
+          <% @ultimos_projects.each do |reciente| %>
+            <tr>
+              <td>
+                <%= link_to project_path(reciente) do %>
+                  <strong><%= reciente.name_project %></strong>
+                <% end %>
+              </td>
+              <td> <%= reciente.price %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="panel panel-default">
     <div class="panel-heading clearfix">
       <h3 class="panel-title pull-left" style="padding-top: 7.5px;"><strong>Proyectos mas Solicitados</strong></h3>
       <div class="btn-group  pull-right">

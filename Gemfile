@@ -26,6 +26,8 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
+gem 'jquery-rails'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
