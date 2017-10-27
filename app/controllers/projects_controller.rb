@@ -11,7 +11,9 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-
+    @client = Client.find(@project.client_id).name
+    @state_project = StateProject.find(@project.state_project_id).name
+    @type_project = TypeProject.find(@project.type_project_id).name
   end
 
   # GET /projects/new

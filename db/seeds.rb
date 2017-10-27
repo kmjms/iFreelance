@@ -69,3 +69,6 @@ end
     project_id:rand(1..20)
     }])
 end
+
+
+User.create(email:"user@test.com",password:"123456")
