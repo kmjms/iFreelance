@@ -6,38 +6,56 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @freelance = Freelance.find(current_user.id)
+
+    @projects = @freelance.projects.all
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @client = Client.find(@project.client_id).name
-    @clients = Client.all
+    @freelance = Freelance.find(current_user.id)
+    
     @state_project = StateProject.find(@project.state_project_id).name
     @type_project = TypeProject.find(@project.type_project_id).name
+
+    @client = Client.find(@project.client_id)
+
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf {render template: 'pdf/bill', pdf:'bill'}
+    end
+
   end
 
   # GET /projects/new
   def new
+    @freelance = Freelance.find(current_user.id)
+
+
     @project = Project.new
-    @clients = Client.all
+    @clients = @freelance.clients.all
     @states_project = StateProject.all
     @type_projects = TypeProject.all
   end
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
-    @clients = Client.all 
+    @freelance = Freelance.find(current_user.id)
+    
+    @project = @freelance.projects.find(params[:id])
+    @clients = @freelance.clients.all
     @states_project = StateProject.all
   end
 
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-    @clients = Client.all
+    @freelance = Freelance.find(current_user.id)
+
+    @project = @freelance.projects.new(project_params)
+    @clients = @freelance.clients.all
     @states_project = StateProject.all
     @type_projects = TypeProject.all
 
@@ -55,7 +73,9 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-    @project = Project.find(params[:id])
+    
+
+    @project = @freelance.projects.find(params[:id])
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
@@ -81,11 +101,13 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      @freelance = Freelance.find(current_user.id)
+
+      @project = @freelance.projects.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :description, :start_date, :end_date, :client_id, :state_project_id, :price, :progress, :type_project_id)
+      params.require(:project).permit(:name, :description, :start_date, :end_date, :client_id, :state_project_id, :price, :progress, :type_project_id).merge(:freelance_id => current_user.id)
     end
 end

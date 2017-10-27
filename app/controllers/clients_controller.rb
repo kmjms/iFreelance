@@ -1,12 +1,13 @@
 class ClientsController < ApplicationController
   layout "dashboard"
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
 
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.paginate(page: params[:page], per_page:10)
+    myFreelance = Freelance.find(current_user.id)
+    @clients = myFreelance.clients.paginate(page: params[:page], per_page:10)
   end
 
   # GET /clients/1
@@ -16,7 +17,8 @@ class ClientsController < ApplicationController
 
   # GET /clients/new
   def new
-    @client = Client.new
+    myFreelance = Freelance.find(current_user.id)
+    @client = myFreelance.clients.new
   end
 
   # GET /clients/1/edit
@@ -26,7 +28,8 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
-    @client = Client.new(client_params)
+    myFreelance = Freelance.find(current_user.id)
+    @client = myFreelance.clients.new(client_params) 
 
     respond_to do |format|
       if @client.save

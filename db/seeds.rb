@@ -27,18 +27,38 @@ end
     }])
 end
 
-
-20.times do
+for i in 1..20
+  currentUser = User.create([{
+    email: Faker::Internet.free_email,
+    password:Faker::Number.number(6)
+  }])
   Freelance.create([{
     name: Faker::Name.name,
-    email: Faker::Internet.free_email
-    }])
+    email: Faker::Internet.free_email,
+    user_id:i
+  }])
 end
+
+## Creacion de usuario de prueba
+currUser = User.create(email:"user@test.com",password:"123456")
+myFreelance = Freelance.create({
+  name: 'Test freelance',
+  email: 'user@test.com',
+  user_id:currUser.id
+})
+
+8.times do
+  myFreelance.clients << Client.find(rand(1..20))
+  myFreelance.save
+end
+
+
+## XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx
 
 10.times do
   currentFreelance = Freelance.find(rand(1..20))
 
-  rand(1..3).times do
+  rand(1..6).times do
     
     currentFreelance.clients << Client.find(rand(1..20))
     currentFreelance.save
@@ -70,5 +90,34 @@ end
     }])
 end
 
+# agregar proyectos random al usuario
 
-User.create(email:"user@test.com",password:"123456")
+for i in 21..35
+
+    Project.create([{
+      name: Faker::Team.creature,
+      description: Faker::Lorem.sentence,
+      start_date: Faker::Date.between(2.days.ago, Date.today),
+      end_date: Faker::Date.between(2.days.ago, Date.today),
+      progress: Faker::Number.decimal(2),
+      client_id:rand(1..20),
+      freelance_id:myFreelance.id,
+      state_project_id:rand(1..5),
+      type_project_id:rand(1..5)
+    }])
+
+    rand(4..9).times do
+      Income.create([{
+        price: Faker::Number.decimal(2, 3),
+        description: Faker::Simpsons.quote,
+        project_id:i
+    }])
+    end
+    
+end
+
+
+
+
+
+

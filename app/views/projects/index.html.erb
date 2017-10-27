@@ -29,7 +29,7 @@
         <td> <%= project.end_date %> </td>
         <td> <%= Client.find(project.client_id).name %> </td>
         <td> <%= StateProject.find(project.state_project_id).name%></td>
-        <td> <%= project.price %></td>
+        <td> <%= number_to_currency(project.price) %></td>
         <td> <%= project.progress %></td>
         <td>
           <%= link_to edit_project_path(project), class: "btn btn-primary" do%>

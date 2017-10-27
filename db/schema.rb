@@ -50,8 +50,10 @@ ActiveRecord::Schema.define(version: 20171027032703) do
     t.string "name"
     t.string "email"
     t.float "total_amount"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_freelances_on_user_id"
   end
 
   create_table "incomes", force: :cascade do |t|
