@@ -81,9 +81,9 @@ test:
 #
 production:
   <<: *default
-  database: iFreelance_production
-  username: fseahljdqrwokc
+  database: dfq0qsms0ema5u
+  username: wrqwzlufqatife
   adapter: postgresql
   port: 5432
-  password: "52bbbaad11c090cb545bdc2b577e29cea4b232ee7dfa410e3ec825fc25fc617c"
-  host: "ec2-54-235-80-137.compute-1.amazonaws.com"
+  password: "e5bd45e4129531be14d70515b7167213310b32fd4c53b35e75f74f5d6bd30114"
+  host: "ec2-54-243-48-183.compute-1.amazonaws.com"
